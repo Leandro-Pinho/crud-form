@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro do usuario</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="js/projecty.js"></script> -->
+  </head>
+  <body>
+    <div id="cardForm">
+      <h1>Cadastro de usuarios</h1>
+      <form id="userForm">
+        <input type="hidden" id="userId" />
+        <div id="name" class="card">
+          <label>Nome: </label>
+          <input type="text" name="name" />
+        </div>
+        <div id="email" class="card">
+          <label>Email: </label>
+          <input type="email" name="email" />
+        </div>
+        <div id="phone" class="card">
+          <label>Telefone: </label>
+          <input type="text" name="phone" />
+        </div>
+        <div id="address" class="card">
+          <label>Endereço: </label>
+          <input type="text" name="address" />
+        </div>
+        <div id="city" class="card">
+          <label>Cidade: </label>
+          <input type="text" name="city" />
+        </div>
+        <div id="work_option">
+          <label>Opção de trabalho: </label>
+          <select name="work_option" id="work_option">
+            <option name="in_person" value="Presencial">Presencial</option>
+            <option name="remote" value="Remoto">Remoto</option>
+            <option name="hybrid" value="Hibrido">Hibrido</option>
+          </select>
+        </div>
+        <div id="travel">
+          <label>Disponibilidade para viajar: </label>
+          <input type="radio" name="travel" value="sim" />sim
+          <input type="radio" name="travel" value="nao" />não
+        </div>
+
+        <button type="submit" id="submit">Cadastrar</button>
+      </form>
+    </div>
+
+    <!-- filtros da tabela -->
+    <div class="menuFilter">
+      <input type="text" id="search" onkeyup="renderUsers()" placeholder="Pesquisar por nome..." />
+      <div id="option1">
+        <label>Classificar por: </label>
+        <select name="work_option1" id="work_option1" onchange="renderUsers()">
+          <option name="Ascendente" value="Cresc">Cresc</option>
+          <option name="Descendente" value="Desc">Desc</option>
+        </select>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Cidade</th>
+          <th>Op. de Trabalho</th>
+          <th>Disp. para viajar</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
